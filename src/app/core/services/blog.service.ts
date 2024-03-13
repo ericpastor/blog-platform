@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { BlogRaw } from '../models/blog.model';
+import { BlogRaw } from '../../models/blog.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BlogService {
-  private baseUrl = 'http://localhost:3000/blogs';
+  private baseUrl = 'http://localhost:3000/blo22gs';
 
   constructor(private httpClient: HttpClient) {}
 
