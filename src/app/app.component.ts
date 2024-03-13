@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { BlogListComponent } from './components/blog-list/blog-list.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [CommonModule, RouterOutlet, HttpClientModule, BlogListComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
-export class AppComponent {
-  title = 'blog-platform';
-}
+export class AppComponent {}

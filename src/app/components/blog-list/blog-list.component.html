@@ -1,1 +1,9 @@
-<p>blog-list works!</p>
+@if(blogsList$ | async; as blogs){
+<ul>
+  @for(blog of blogs; track blog.id){
+  <li>
+    <app-blog-detail [blogDetail]="blog" />
+  </li>
+  }
+</ul>
+}

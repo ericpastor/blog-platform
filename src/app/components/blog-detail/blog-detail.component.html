@@ -1,1 +1,6 @@
-<p>blog-detail works!</p>
+<div>
+  <h4>{{ blogDetail.title }}</h4>
+  <p>content:{{ blogDetail.content }}</p>
+  <p>author:{{ blogDetail.author }}</p>
+  {{ blogDetail.date | date : "MMM dd, yyyy" }}
+</div>
