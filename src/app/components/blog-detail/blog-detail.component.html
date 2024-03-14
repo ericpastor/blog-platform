@@ -3,4 +3,5 @@
   <p>content:{{ blogDetail.content }}</p>
   <p>author:{{ blogDetail.author }}</p>
   {{ blogDetail.date | date : "MMM dd, yyyy" }}
+  <button (click)="removeBlog()">Delete</button>
 </div>

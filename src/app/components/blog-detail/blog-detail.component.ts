@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { BlogRaw } from '../../models/blog.model';
 import { CommonModule } from '@angular/common';
+import { BlogService } from '../../core/services/blog.service';
 
 @Component({
   selector: 'app-blog-detail',
@@ -11,4 +12,11 @@ import { CommonModule } from '@angular/common';
 })
 export class BlogDetailComponent {
   @Input() blogDetail!: BlogRaw;
+
+  constructor(private blogService: BlogService) {}
+
+  public removeBlog() {
+    const blogToRemove = this.blogDetail.id;
+    this.blogService.removeBlog(blogToRemove).subscribe();
+  }
 }

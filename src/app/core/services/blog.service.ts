@@ -14,7 +14,11 @@ export class BlogService {
     return this.httpClient.get<BlogRaw[]>(`${environment.baseUrl}`);
   }
 
-  public AddNewBlog(newBlog:BlogRaw): Observable<BlogRaw> {
+  public addNewBlog(newBlog: BlogRaw): Observable<BlogRaw> {
     return this.httpClient.post<BlogRaw>(`${environment.baseUrl}`, newBlog);
+  }
+
+  public removeBlog(id: number): Observable<BlogRaw> {
+    return this.httpClient.delete<BlogRaw>(`${environment.baseUrl}/${id}`);
   }
 }

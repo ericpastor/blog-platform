@@ -26,6 +26,6 @@ export class BlogCreateComponent {
       content: this.newContent,
       date: new Date(),
     };
-    this.blogService.AddNewBlog(newBlog).subscribe();
+    this.blogService.addNewBlog(newBlog).subscribe();
   }
 }
