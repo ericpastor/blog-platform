@@ -1,1 +1,32 @@
-<p>blog-edit works!</p>
+<div>
+  <p>Add a new Blog</p>
+  <form (ngSubmit)="UpdateBlog(id)" action="update-a-blog">
+    <label for="title">
+      <input
+        id="title"
+        type="text"
+        [(ngModel)]="updatedTitle"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </label>
+    <label for="author">
+      <input
+        id="author"
+        type="text"
+        [(ngModel)]="updatedAuthor"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </label>
+    <label for="content">
+      <input
+        id="content"
+        type="text"
+        [(ngModel)]="updatedContent"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </label>
+    <div>
+      <button>send</button>
+    </div>
+  </form>
+</div>

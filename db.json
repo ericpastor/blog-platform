@@ -3,9 +3,9 @@
     {
       "id": 1,
       "title": "First Blog Title",
-      "date": "2023-04-22",
-      "author": "John Doe",
-      "content": "This is the content of the first blog."
+      "date": "2024-03-14T12:59:46.358Z",
+      "author": "Jonathan Dellton",
+      "content": "This is the content of the first blog.-updated"
     },
     {
       "id": 2,
@@ -13,13 +13,6 @@
       "date": "2023-04-23",
       "author": "Jane Smith",
       "content": "This is the content of the second blog."
-    },
-    {
-      "id": 0.5118168284261979,
-      "title": "Third Blog Title",
-      "author": "Robert C. Martin",
-      "content": "This is the content of the third blog.",
-      "date": "2024-03-14T05:11:09.179Z"
     }
   ]
 }
