@@ -1,1 +1,32 @@
-<p>blog-create works!</p>
+<div>
+  <p>Add a new Blog</p>
+  <form (ngSubmit)="AddNewBlog()" action="create-new-blog">
+    <label for="title">
+      <input
+        id="title"
+        type="text"
+        [(ngModel)]="newTitle"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </label>
+    <label for="author">
+      <input
+        id="author"
+        type="text"
+        [(ngModel)]="newAuthor"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </label>
+    <label for="content">
+      <input
+        id="content"
+        type="text"
+        [(ngModel)]="newContent"
+        [ngModelOptions]="{ standalone: true }"
+      />
+    </label>
+    <div>
+      <button>send</button>
+    </div>
+  </form>
+</div>

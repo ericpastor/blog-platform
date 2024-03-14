@@ -3,11 +3,18 @@ import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { BlogListComponent } from './components/blog-list/blog-list.component';
 import { CommonModule } from '@angular/common';
+import { BlogCreateComponent } from './components/blog-create/blog-create.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HttpClientModule, BlogListComponent],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    HttpClientModule,
+    BlogListComponent,
+    BlogCreateComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

@@ -13,4 +13,8 @@ export class BlogService {
   public getAllBlogs(): Observable<BlogRaw[]> {
     return this.httpClient.get<BlogRaw[]>(`${environment.baseUrl}`);
   }
+
+  public AddNewBlog(newBlog:BlogRaw): Observable<BlogRaw> {
+    return this.httpClient.post<BlogRaw>(`${environment.baseUrl}`, newBlog);
+  }
 }
