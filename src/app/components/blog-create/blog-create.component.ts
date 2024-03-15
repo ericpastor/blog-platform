@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BlogRaw } from '../../models/blog.model';
 import { BlogService } from '../../core/services/blog.service';
@@ -12,6 +12,8 @@ import { BlogService } from '../../core/services/blog.service';
   styleUrl: './blog-create.component.css',
 })
 export class BlogCreateComponent {
+  @Input() updateList!: () => void;
+
   public newTitle: string = '';
   public newAuthor: string = '';
   public newContent: string = '';
@@ -26,6 +28,8 @@ export class BlogCreateComponent {
       content: this.newContent,
       date: new Date(),
     };
-    this.blogService.addNewBlog(newBlog).subscribe();
+    this.blogService.addNewBlog(newBlog).subscribe(() => {
+      this.updateList();
+    });
   }
 }

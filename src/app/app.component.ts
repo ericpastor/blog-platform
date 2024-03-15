@@ -8,13 +8,7 @@ import { BlogCreateComponent } from './components/blog-create/blog-create.compon
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    CommonModule,
-    RouterOutlet,
-    HttpClientModule,
-    BlogListComponent,
-    BlogCreateComponent,
-  ],
+  imports: [CommonModule, RouterOutlet, HttpClientModule, BlogListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

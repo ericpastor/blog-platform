@@ -4,15 +4,6 @@
   <p>author:{{ blogDetail.author }}</p>
   {{ blogDetail.date | date : "MMM dd, yyyy" }}
   <div>
-    @if(updateFormDisabled === false){
-    <app-blog-edit [id]="blogDetail.id" />
-    }
-  </div>
-  <button (click)="toggleForm()">
-    {{ updateFormDisabled === true ? "Update Blog" : "Hide the update form" }}
-  </button>
-  <button (click)="removeBlog()">Delete</button>
-  <div>
     <app-error-message [errorMessage]="errorMessage" />
   </div>
 </div>

@@ -1,8 +1,19 @@
+<app-blog-create [updateList]="callBackFunction" />
+
 @if(blogsList$ | async; as blogs){
 <ul>
   @for(blog of blogs; track blog.id){
   <li>
     <app-blog-detail [blogDetail]="blog" />
+    <div>
+      @if(updateFormDisabled === false){
+      <app-blog-edit [id]="blog.id" [updateList]="callBackFunction" />
+      }
+    </div>
+    <button (click)="toggleForm()">
+      {{ updateFormDisabled === true ? "Update Blog" : "Hide the update form" }}
+    </button>
+    <button (click)="removeBlog(blog.id)">Delete</button>
   </li>
   }
 </ul>

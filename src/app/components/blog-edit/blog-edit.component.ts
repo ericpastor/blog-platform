@@ -4,6 +4,7 @@ import { BlogRaw } from '../../models/blog.model';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BlogDetailComponent } from '../blog-detail/blog-detail.component';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-blog-edit',
@@ -14,6 +15,9 @@ import { BlogDetailComponent } from '../blog-detail/blog-detail.component';
 })
 export class BlogEditComponent {
   @Input() id!: number;
+  @Input() updateList!: () => void;
+
+  public blogsList$!: Observable<BlogRaw[]>;
 
   public updatedTitle: string = '';
   public updatedAuthor: string = '';
@@ -21,7 +25,7 @@ export class BlogEditComponent {
 
   constructor(private blogService: BlogService) {}
 
-  public UpdateBlog(id: number) {
+  public UpdateBlog(id: number, updateList: void) {
     const updatedBlog = {
       id: id,
       title: this.updatedTitle,
@@ -29,6 +33,9 @@ export class BlogEditComponent {
       content: this.updatedContent,
       date: new Date(),
     };
-    this.blogService.updateBlog(id, updatedBlog).subscribe();
+
+    this.blogService.updateBlog(id, updatedBlog).subscribe(() => {
+      this.updateList();
+    });
   }
 }

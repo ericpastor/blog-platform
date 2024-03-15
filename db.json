@@ -2,10 +2,10 @@
   "blogs": [
     {
       "id": 1,
-      "title": "First Blog Title",
-      "date": "2024-03-14T12:59:46.358Z",
-      "author": "Jonathan Dellton",
-      "content": "This is the content of the first blog.-updated"
+      "title": "First Blog Title-Modified 4",
+      "date": "2024-03-15T08:23:12.386Z",
+      "author": "Robert C. Martin",
+      "content": "This is the content of the first blog. 4"
     },
     {
       "id": 2,
@@ -13,6 +13,13 @@
       "date": "2023-04-23",
       "author": "Jane Smith",
       "content": "This is the content of the second blog."
+    },
+    {
+      "id": 0.9731879085047512,
+      "title": "Third Blog Title",
+      "author": "Jonathan Dellton",
+      "content": "This is the content of the third blog.",
+      "date": "2024-03-15T08:33:01.129Z"
     }
   ]
 }

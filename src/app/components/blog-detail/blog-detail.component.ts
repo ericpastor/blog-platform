@@ -20,18 +20,7 @@ export class BlogDetailComponent {
   public errorMessage!: string;
   public updateFormDisabled = true;
 
-  constructor(private blogService: BlogService) {}
-
   toggleForm() {
     this.updateFormDisabled = !this.updateFormDisabled;
-  }
-
-  public removeBlog() {
-    const blogId = this.blogDetail.id;
-    if (blogId) {
-      this.blogService.removeBlog(blogId).subscribe(() => {
-        this.blogs = this.blogs.filter((blog) => blog.id !== blogId);
-      });
-    }
   }
 }
