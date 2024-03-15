@@ -6,12 +6,12 @@
   <li>
     <app-blog-detail [blogDetail]="blog" />
     <div>
-      @if(updateFormDisabled === false){
+      @if(isFormOpen(blog.id)){
       <app-blog-edit [id]="blog.id" [updateList]="callBackFunction" />
       }
     </div>
-    <button (click)="toggleForm()">
-      {{ updateFormDisabled === true ? "Update Blog" : "Hide the update form" }}
+    <button (click)="toggleForm(blog.id)">
+      {{ isFormOpen(blog.id) ? "Hide the update form" : "Update Blog" }}
     </button>
     <button (click)="removeBlog(blog.id)">Delete</button>
   </li>

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BlogRaw } from '../../models/blog.model';
 import { BlogService } from '../../core/services/blog.service';
@@ -18,7 +18,7 @@ export class BlogCreateComponent {
   public newAuthor: string = '';
   public newContent: string = '';
 
-  constructor(private blogService: BlogService) {}
+  private blogService = inject(BlogService);
 
   public AddNewBlog() {
     const newBlog = {

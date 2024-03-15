@@ -1,8 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { BlogRaw } from '../../models/blog.model';
 import { AsyncPipe, CommonModule } from '@angular/common';
-import { BlogService } from '../../core/services/blog.service';
-import { EMPTY, catchError } from 'rxjs';
 import { BlogEditComponent } from '../blog-edit/blog-edit.component';
 import { ErrorMessageComponent } from '../error-message/error-message.component';
 

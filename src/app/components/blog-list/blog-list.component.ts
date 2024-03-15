@@ -27,13 +27,22 @@ export class BlogListComponent implements OnInit {
   public blogsList$!: Observable<BlogRaw[]>;
   public getAllBlogs = this.loadALL();
   public updateFormDisabled = true;
+  public currentBlogId: number | null = null;
 
   public errorMessage!: string;
 
   constructor(private blogService: BlogService) {}
 
-  toggleForm() {
-    this.updateFormDisabled = !this.updateFormDisabled;
+  toggleForm(blogId: number) {
+    if (this.currentBlogId === blogId) {
+      this.currentBlogId = null;
+    } else {
+      this.currentBlogId = blogId;
+    }
+  }
+
+  isFormOpen(blogId: number): boolean {
+    return this.currentBlogId === blogId;
   }
 
   public callBackFunction = () => {
