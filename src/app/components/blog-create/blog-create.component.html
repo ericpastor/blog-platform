@@ -1,30 +1,43 @@
 <div>
   <p>Add a new Blog</p>
-  <form (ngSubmit)="AddNewBlog()" action="create-new-blog">
-    <label for="title">
-      <input
-        id="title"
-        type="text"
-        [(ngModel)]="newTitle"
-        [ngModelOptions]="{ standalone: true }"
-      />
-    </label>
-    <label for="author">
-      <input
-        id="author"
-        type="text"
-        [(ngModel)]="newAuthor"
-        [ngModelOptions]="{ standalone: true }"
-      />
-    </label>
-    <label for="content">
-      <input
-        id="content"
-        type="text"
-        [(ngModel)]="newContent"
-        [ngModelOptions]="{ standalone: true }"
-      />
-    </label>
+  <form (ngSubmit)="AddNewBlog()" action="create-new-blog" [formGroup]="form">
+    <label>Title</label>
+    <input id="title" type="text" formControlName="newTitle" />
+    <div
+      *ngIf="
+        (form.controls['newTitle'].invalid &&
+          form.controls['newTitle'].touched) ||
+        form.controls['newTitle'].dirty
+      "
+    >
+      <span *ngIf="form.controls['newTitle'].errors?.['required']"
+        >Title required</span
+      >
+      <span *ngIf="form.controls['newTitle'].errors?.['minlength']"
+        >At least 4 characters required</span
+      >
+    </div>
+
+    <label for="author">Author</label>
+    <input id="author" type="text" formControlName="newAuthor" />
+    <div
+      *ngIf="
+        (form.controls['newAuthor'].invalid &&
+          form.controls['newAuthor'].touched) ||
+        form.controls['newAuthor'].dirty
+      "
+    >
+      <span *ngIf="form.controls['newAuthor'].errors?.['required']"
+        >Author required</span
+      >
+      <span *ngIf="form.controls['newAuthor'].errors?.['minlength']"
+        >At least 4 characters required</span
+      >
+    </div>
+
+    <label for="content">Content</label>
+    <input id="content" type="text" formControlName="newContent" />
+
     <div>
       <button>send</button>
     </div>
